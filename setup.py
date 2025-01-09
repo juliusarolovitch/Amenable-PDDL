@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="AmenablePDDL",
-    version="0.1.3",
+    version="0.1.4",
     author="Julius Arolovitch",
     author_email="jarolovi@andrew.cmu.edu",
     description="A high-level PDDL parsing and planning interface for implementing common classical planning algorithms. ",
