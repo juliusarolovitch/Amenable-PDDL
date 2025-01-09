@@ -1,4 +1,4 @@
-# AmenablePDDL Interface
+# AmenablePDDL
 
 AmenablePDDL is designed to simplify parsing and planning simple PDDL-defined domains and problems, providing an intuitive interface for implementing common planning algorithms. AmenablePDDL is a wrapper around the PDDL library by Marco Favorito, Francesco Fuggitti, and Christian Muise. 
 
