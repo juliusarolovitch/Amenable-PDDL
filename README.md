@@ -42,10 +42,10 @@ This interface was developed for Carnegie Mellon University's 16-280 Intelligent
 ## Quick Start Example
 
 ```python
-from amenable_pddl import AmenablePDDL
+from AmenablePDDL import AmenableP
 
 # Initialize the interface with domain and problem files
-interface = AmenablePDDL("domain.pddl", "problem.pddl")
+interface = AmenableP("domain.pddl", "problem.pddl")
 
 # Retrieve initial state and available actions
 the_initial_state = interface.get_initial_state()
@@ -64,7 +64,7 @@ This example initializes the AmenablePDDL interface, loads the domain and proble
 ### Constructor
 
 ```python
-interface = AmenablePDDL(domain_file, problem_file)
+interface = AmenableP(domain_file, problem_file)
 ```
 - **domain_file**: Path to the PDDL domain file.
 - **problem_file**: Path to the PDDL problem file.
@@ -93,10 +93,10 @@ interface = AmenablePDDL(domain_file, problem_file)
 Below is an example of how to implement a Depth-First Search (DFS) planner using AmenablePDDL.
 
 ```python
-from amenable_pddl import AmenablePDDL
+from AmenablePDDL import AmenableP
 
 # Initialize the interface
-interface = AmenablePDDL("domain.pddl", "problem.pddl")
+interface = AmenableP("domain.pddl", "problem.pddl")
 
 # Define a simple DFS function
 
