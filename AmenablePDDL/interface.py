@@ -6,10 +6,7 @@ AmenablePDDL Interface
 
 This module provides a high-level interface for loading a PDDL domain and
 problem, generating initial states, checking preconditions, binding action
-parameters, applying effects, and performing a DFS to find a plan.
-
-This library is designed for professional use, offering a robust interface
-for PDDL planning tasks.
+parameters, and applying effects.
 """
 
 from pddl import parse_domain, parse_problem
@@ -24,14 +21,6 @@ from itertools import product
 from typing import Dict, Set, List, Tuple, Optional
 
 class AmenableP:
-    """
-    A high-level interface for a PDDL domain and problem, providing:
-      - Parsing and loading of domain and problem files
-      - State representation and manipulation
-      - Action parameter binding, precondition checking, and effect application
-      - Goal evaluation
-      - A demonstration DFS planner
-    """
 
     def __init__(self, domain_file: str, problem_file: str):
         """
@@ -281,28 +270,3 @@ class AmenableP:
             else:
                 grounded_terms.append(term)
         return Predicate(pred.name, *grounded_terms)
-
-if __name__ == "__main__":
-    domain_file = "scotty_domain.pddl"
-    problem_file = "scotty_problem.pddl"
-
-    interface = AmenablePDDL(domain_file, problem_file)
-
-    init_state = interface.get_initial_state()
-    print("\nInitial State:")
-    for pred in init_state:
-        print("  ", pred)
-
-    print("\nActions:")
-    for act in interface.get_domain_actions():
-        print("  ", act.name, " parameters=", [v.name for v in act.parameters])
-
-    print("\nRunning DFS plan search...")
-    plan = interface.plan_with_dfs(depth_limit=50)
-    if plan is None:
-        print("No plan found.")
-    else:
-        print("Plan found:")
-        for i, (action, binding) in enumerate(plan, start=1):
-            bound_str = " ".join(str(binding[p]) for p in action.parameters)
-            print(f"{i}: {action.name} {bound_str}")
