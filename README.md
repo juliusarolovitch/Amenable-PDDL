@@ -24,7 +24,7 @@ This interface was developed for Carnegie Mellon University's 16-280 Intelligent
 
 AmenablePDDL is available through pip. Install it on your machine by running:
 ```bash
-    pip install AmenablePDDL
+pip install AmenablePDDL
 ```
 
 ---
