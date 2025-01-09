@@ -22,14 +22,10 @@ This interface was developed for Carnegie Mellon University's 16-280 Intelligent
 
 ## Installation
 
-1. **Clone or Download** the repository containing AmenablePDDL.
-
-2. **Install Dependencies**:
+1. **Install** AmenablePDDL with pip:
    ```bash
-   pip install pddl
+     pip install AmenablePDDL
    ```
-
-3. **Include AmenablePDDL** in your project by copying the module file or installing via your package manager if available.
 
 ---
 
