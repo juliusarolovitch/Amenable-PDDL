@@ -1,6 +1,6 @@
 # AmenablePDDL Interface
 
-A professional high-level Python interface for working with PDDL (Planning Domain Definition Language) domain and problem files. AmenablePDDL is designed to simplify common planning tasks, allowing developers to focus on implementing and optimizing planning algorithms without dealing with low-level parsing or state management details.
+AmenablePDDL is designed to simplify parsing and planning simple PDDL-defined domains and problems, providing an intuitive interface for implementing common planning algorithms. AmenablePDDL is a wrapper around the PDDL library by Marco Favorito, Francesco Fuggitti, and Christian Muise. 
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,7 +14,6 @@ A professional high-level Python interface for working with PDDL (Planning Domai
   - [Action Applicability and Application](#action-applicability-and-application)
 - [Implementing DFS (Example)](#implementing-dfs-example)
 - [Internal Methods (Optional)](#internal-methods-optional)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -143,17 +142,7 @@ AmenablePDDL also provides internal methods for advanced usage:
 - `_apply_effects(action, state, binding)`
 - `_ground_predicate(pred, binding)`
 
-These methods are used internally by the public methods, but advanced users can refer to them for customization or extension.
-
----
-
-## Contributing
-
-1. Fork the repository and create a feature branch from `main`.
-2. Implement enhancements, fixes, or new features.
-3. Submit a pull request detailing your changes.
-
-Contributions are welcome. Please follow the project's coding standards and include appropriate tests.
+These methods are used internally by the public methods, but users can extend the existing methods by forking the repository. 
 
 ---
 
@@ -161,6 +150,4 @@ Contributions are welcome. Please follow the project's coding standards and incl
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
 
-Happy planning with AmenablePDDL!
