@@ -86,56 +86,6 @@ class AmenableP:
         """
         return self._apply_effects(action, state, binding)
 
-    def plan_with_dfs(
-        self,
-        initial_state: Optional[Set[Predicate]] = None,
-        depth_limit: int = 50,
-    ) -> Optional[List[Tuple[Action, Dict[Variable, Constant]]]]:
-        """
-        A simple Depth-First Search planner for the current domain and problem.
-
-        :param initial_state: If None, uses the interface's own initial state.
-        :param depth_limit: Maximum depth to search to avoid infinite recursion.
-        :return: A plan (list of (action, binding)) if found, or None.
-        """
-        if initial_state is None:
-            initial_state = self.initial_state
-
-        visited_states: Set[frozenset] = set()
-        plan = self._dfs(
-            state=initial_state,
-            plan=[],
-            visited=visited_states,
-            depth_limit=depth_limit,
-        )
-        return plan
-
-    def _dfs(
-        self,
-        state: Set[Predicate],
-        plan: List[Tuple[Action, Dict[Variable, Constant]]],
-        visited: Set[frozenset],
-        depth_limit: int,
-    ) -> Optional[List[Tuple[Action, Dict[Variable, Constant]]]]:
-        if depth_limit <= 0:
-            return None
-        if self.is_goal_state(state):
-            return plan
-
-        state_key = frozenset(state)
-        visited.add(state_key)
-
-        for (action, binding) in self.find_applicable_actions(state):
-            new_state = self.apply_action(action, state, binding)
-            new_state_key = frozenset(new_state)
-
-            if new_state_key not in visited:
-                new_plan = plan + [(action, binding)]
-                result = self._dfs(new_state, new_plan, visited, depth_limit - 1)
-                if result is not None:
-                    return result
-        return None
-
     def _evaluate_condition(
         self,
         expr,
